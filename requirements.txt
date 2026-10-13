@@ -1,3 +1,2 @@
 # Yahoo Fantasy API
-requests-oauthlib
 requests
