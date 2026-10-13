@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "Yahoo Fantasy Football Plugin Configuration",
+  "description": "Configuration for Yahoo Fantasy Football LED Matrix display",
+  "properties": {
+    "enabled": {
+      "type": "boolean",
+      "default": true,
+      "description": "Enable or disable this plugin"
+    },
+    "consumer_key": {
+      "type": "string",
+      "default": "",
+      "description": "Yahoo API Consumer Key from developer.apps.yahoo.com"
+    },
+    "consumer_secret": {
+      "type": "string",
+      "default": "",
+      "description": "Yahoo API Consumer Secret"
+    },
+    "access_token": {
+      "type": "string",
+      "default": "",
+      "description": "Yahoo OAuth Access Token"
+    },
+    "access_token_secret": {
+      "type": "string",
+      "default": "",
+      "description": "Yahoo OAuth Access Token Secret"
+    },
+    "refresh_token": {
+      "type": "string",
+      "default": "",
+      "description": "Deprecated: use access_token instead"
+    },
+    "leagues": {
+      "type": "array",
+      "description": "List of leagues to display. Each entry requires league_id and display name.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "league_id": {
+            "type": "string",
+            "description": "Yahoo league ID, e.g. 12345.l.12345"
+          },
+          "name": {
+            "type": "string",
+            "description": "Short display name for the league"
+          },
+          "game_code": {
+            "type": "string",
+            "default": "nfl",
+            "description": "Game code, nfl for football"
+          }
+        },
+        "required": ["league_id", "name"]
+      },
+      "default": []
+    },
+    "display_mode": {
+      "type": "string",
+      "enum": ["standings", "matchups", "both"],
+      "default": "both",
+      "description": "What to show on the matrix"
+    },
+    "update_interval": {
+      "type": "integer",
+      "default": 900,
+      "minimum": 60,
+      "maximum": 3600,
+      "description": "How often to refresh data from Yahoo in seconds"
+    },
+    "text_color": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "default": [255, 255, 0],
+      "description": "RGB color for text [R, G, B]"
+    },
+    "highlight_color": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 255
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "default": [0, 255, 0],
+      "description": "RGB color for user's team / highlight"
+    },
+    "display_duration": {
+      "type": "number",
+      "default": 20,
+      "minimum": 5,
+      "maximum": 300,
+      "description": "Seconds to display each league before rotating"
+    }
+  },
+  "required": ["enabled"],
+  "additionalProperties": false
+}

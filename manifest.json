@@ -1,0 +1,36 @@
+{
+  "id": "yahoo-fantasy",
+  "name": "Yahoo Fantasy Football",
+  "version": "0.1.0",
+  "author": "eric",
+  "description": "Display Yahoo Fantasy Football league standings and weekly matchups for multiple leagues on LED Matrix",
+  "entry_point": "manager.py",
+  "class_name": "YahooFantasyPlugin",
+  "category": "sports",
+  "tags": [
+    "sports",
+    "fantasy",
+    "football",
+    "yahoo"
+  ],
+  "display_modes": [
+    "yahoo-fantasy"
+  ],
+  "versions": [
+    {
+      "version": "0.1.0",
+      "released": "2026-10-12",
+      "ledmatrix_min_version": "2.0.0",
+      "notes": "Initial skeleton with config schema and BasePlugin structure. Yahoo OAuth and API calls need to be implemented."
+    }
+  ],
+  "last_updated": "2026-10-12",
+  "stars": 0,
+  "downloads": 0,
+  "verified": false,
+  "screenshot": "",
+  "config_schema": "config_schema.json",
+  "compatible_versions": [
+    ">=2.0.0"
+  ]
+}
