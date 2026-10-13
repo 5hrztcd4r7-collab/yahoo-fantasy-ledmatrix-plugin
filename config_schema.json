@@ -9,30 +9,35 @@
       "default": true,
       "description": "Enable or disable this plugin"
     },
-    "consumer_key": {
+    "client_id": {
       "type": "string",
       "default": "",
-      "description": "Yahoo API Consumer Key from developer.apps.yahoo.com"
+      "description": "Yahoo OAuth2 Client ID from developer.yahoo.com/apps"
     },
-    "consumer_secret": {
+    "client_secret": {
       "type": "string",
       "default": "",
-      "description": "Yahoo API Consumer Secret"
-    },
-    "access_token": {
-      "type": "string",
-      "default": "",
-      "description": "Yahoo OAuth Access Token"
-    },
-    "access_token_secret": {
-      "type": "string",
-      "default": "",
-      "description": "Yahoo OAuth Access Token Secret"
+      "description": "Yahoo OAuth2 Client Secret"
     },
     "refresh_token": {
       "type": "string",
       "default": "",
-      "description": "Deprecated: use access_token instead"
+      "description": "Yahoo OAuth2 Refresh Token, obtained after initial authorization"
+    },
+    "access_token": {
+      "type": "string",
+      "default": "",
+      "description": "Yahoo OAuth2 Access Token, auto-refreshed"
+    },
+    "access_token_expiry": {
+      "type": "integer",
+      "default": 0,
+      "description": "Unix timestamp when access token expires"
+    },
+    "redirect_uri": {
+      "type": "string",
+      "default": "https://localhost:3000/auth/callback",
+      "description": "OAuth2 redirect URI registered in Yahoo app"
     },
     "leagues": {
       "type": "array",
